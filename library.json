@@ -1,6 +1,6 @@
 {
   "name": "rmtNEO",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Ported the v5.0 esp-idf RMT libs to the arduino environment.",
   "keywords": "rmt, remote",
   "authors":

@@ -9,7 +9,7 @@ So, until this library's features are available in the actual backend, I just co
 Some of the preprocessor `#defines` that this library uses to enable features come from the new (5.0.0) version of espidf. As a result, some features are incorrectly disabled. To mitigate this, I put some extra definitions in `/src/clk_tree_defs.h`. The definitions I'm including only cover the generic "esp32" flavor of controller. I got these definitions from `framework-espidf/components/soc/esp32/include/soc/soc_caps.h`
 *This may result in compatibility issues! (enable what you need. you shouldn't need to touch it if you have one of the many basic ESP32 devkits)*
 
-Additionally, everything in './include/driver/hal' is also specific to the generic esp32. To change what ESP this is compatible with, change the contents of './include/driver/hal' and use the defs from the proper board (you can get these from the official espidf release). They're found in `framework-espidf/components/hal/BOARDTYPE/include/hal/`.
+Additionally, everything in `./src/driver/hal` is also specific to the generic esp32. To change what ESP this is compatible with, change the contents of `./src/driver/hal` and use the defs from the proper board (you can get these from the official espidf release). They're found in `framework-espidf/components/hal/BOARDTYPE/include/hal/`.
 
 Everywhere I made a change, I put `//ALTER` at the end of the line. You can use this to see what I changed or make fixes where needed.
 

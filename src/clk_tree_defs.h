@@ -17,7 +17,7 @@ extern "C" {
 *   To mitigate this, I'm putting those essential definitions here.
 *   The definitions I'm including only cover the generic "esp32" class.
 *   This may result in compatibility issues! (enable what you need)
-*   To change what ESP this is compatable with, change the contents of ./include/driver/hal and use the defs from the proper board (get these from the espidf release)
+*   To change what ESP this is compatable with, change the contents of ./driver/hal and use the defs from the proper board (get these from the espidf release)
 *   framework-espidf\components\soc\esp32\include\soc\soc_caps.h
 */
 //#define SOC_RMT_GROUPS                  1U /*!< One RMT group */
@@ -226,14 +226,15 @@ typedef enum {
 
 ///////////////////////////////////////////////////UART/////////////////////////////////////////////////////////////////
 
-/**
- * @brief Type of UART clock source, reserved for the legacy UART driver
- */
-typedef enum {
-    UART_SCLK_APB = SOC_MOD_CLK_APB,           /*!< UART source clock is APB CLK */
-    UART_SCLK_REF_TICK = SOC_MOD_CLK_REF_TICK, /*!< UART source clock is REF_TICK */
-    UART_SCLK_DEFAULT = SOC_MOD_CLK_APB,       /*!< UART source clock default choice is APB */
-} soc_periph_uart_clk_src_legacy_t;
+//ALTER
+// /**
+//  * @brief Type of UART clock source, reserved for the legacy UART driver. With the newer platformIO espressif32 frameworks, having this results in a redefinition conflict. It's not explicitly needed with the RMT implementation, so we'll leave it out.
+//  */
+// typedef enum {
+//     UART_SCLK_APB = SOC_MOD_CLK_APB,           /*!< UART source clock is APB CLK */
+//     UART_SCLK_REF_TICK = SOC_MOD_CLK_REF_TICK, /*!< UART source clock is REF_TICK */
+//     UART_SCLK_DEFAULT = SOC_MOD_CLK_APB,       /*!< UART source clock default choice is APB */
+// } soc_periph_uart_clk_src_legacy_t;
 
 //////////////////////////////////////////////////MCPWM/////////////////////////////////////////////////////////////////
 
